@@ -180,7 +180,7 @@ function require(module)
 			if result then
 				package.loaded[module] = result() or true
 			else
-				error("ti loh")
+				error(result)
 			end
 		else
 			error("File opening failed: " .. tostring(reason))
