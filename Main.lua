@@ -177,11 +177,7 @@ function require(module)
 			temporaryFilesystemProxy.close(handle)
 			
 			local result, reason = load(data, "=" .. module)
-			if result then
-				package.loaded[module] = result() or true
-			else
-				error(result)
-			end
+			package.loaded[module] = result() or true
 		else
 			error("File opening failed: " .. tostring(reason))
 		end
